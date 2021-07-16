@@ -1,7 +1,9 @@
 <template>
   <div>
     <b-row class="py-3 px-5">
-      <h1>Prueba interna Nicolás Londoño</h1>
+      <h1 @click="goToInfo()">
+        Red de mascotas Nicolás Londoño
+      </h1>
     </b-row>
     <b-breadcrumb :items="breadcrumbs">
       {{ $route }}
@@ -20,6 +22,11 @@ export default {
         { text: 'Query by product', href: '/product' },
         { text: 'General information', href: '/consulta' }
       ]
+    }
+  },
+  methods: {
+    goToInfo () {
+      this.$router.push('/consulta')
     }
   }
 }

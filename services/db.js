@@ -19,9 +19,27 @@ async function querySalesDetail (context, saleId) {
   return res.data
 }
 
+async function queryAllProducts (context) {
+  const res = await context.$axios.get('/product')
+  return res.data
+}
+
+async function queryAllProviders (context) {
+  const res = await context.$axios.get('/provider')
+  return res.data
+}
+
+async function queryAllClients (context) {
+  const res = await context.$axios.get('/client')
+  return res.data
+}
+
 export default {
   querySalesByClient,
   querySalesByProvider,
   querySalesByProduct,
-  querySalesDetail
+  querySalesDetail,
+  queryAllProducts,
+  queryAllProviders,
+  queryAllClients
 }
